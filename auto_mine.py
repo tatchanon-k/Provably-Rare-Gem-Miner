@@ -23,7 +23,6 @@ TARGET_GEM = int(os.getenv('TARGET_GEM', 6))  # change gem here or in .env
 
 # config here
 w3 = Web3(Web3.HTTPProvider(f'https://mainnet.infura.io/v3/{INFLURA_API_KEY}'))
-#https://mainnet.infura.io/v3/bfa7183bdd4241a6aa36b718bce971af
 your_address = WALLET_ADDRESS  # my address don't use it.
 target_gem = TARGET_GEM  # gem type
 
