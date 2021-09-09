@@ -11,6 +11,7 @@ chain_id = 1  # eth main net who mine others chain for god sake // nah JK I thin
 entropy = 0x949f147e5fb733f43d887bd3f9455dad768029a75baa8c63ec2d749439935d59  # loot / main net
 # entropy = 0xe562c6985e1e24ea9e1b39595afc64ac6cee3a06f6f4402694a85f49a7986ba8 # bloot / main net
 gemAddr = '0xC67DED0eC78b849e17771b2E8a7e303B4dAd6dD4'  # gem address (yeah at this point you should know what it is)
+#userAddr = '0x6647a7858a0B3846AbD5511e7b797Fc0a0c63a4b'  # your address. this is my address (where you can donate lol)
 userAddr = '0x5C44f3Dd2Bf7F49e99b79FaeeBe770124AaaD23C'  # your address. this is my address (where you can donate lol)
 kind = 0  # which gem ya want (Loot, Amethyst = 0 Topaz = 1 ... for Bloot Violet=10, Goldy Pebble =1 ...)
 nonce = 0  # how greedy are you? JK (you can read from contract or FE)

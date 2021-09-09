@@ -44,7 +44,7 @@ class StickTheMiner:
     @staticmethod
     def get_salt() -> int:
         # can probably go to 256 but 123 probably enough
-        return random.randint(1, 2 ** 123)
+        return random.randint(1, 2 ** 256)
 
     def run(self):
         i = 0
@@ -64,7 +64,7 @@ class StickTheMiner:
                     self.line_notify.send(template)
                 return salt
 
-            if i % 5000 == 0:
+            if i % 30000 == 0:
                 if self.diff_callback is not None:
                     if time.time() - self.last_check > 120:
                         self.diff = self.diff_callback.get_diff()

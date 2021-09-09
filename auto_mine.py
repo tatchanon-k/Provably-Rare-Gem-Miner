@@ -12,19 +12,23 @@ import requests
 
 load_dotenv()
 
+#Change PC Name
+PCName = 'Tor'
 # change wallet here or in .env
 WALLET_ADDRESS = os.getenv('WALLET_ADDRESS', 'DEFAULT_WALLET')
 # change influra api key here or in .env
 INFLURA_API_KEY = os.getenv('INFLURA_API_KEY', 'DEFAULT_INFLURA')
-TARGET_GEM = int(os.getenv('TARGET_GEM', 1))  # change gem here or in .env
+TARGET_GEM = int(os.getenv('TARGET_GEM', 6))  # change gem here or in .env
+#LINE_AUTH_TOKEN = int(os.getenv('LINE_API_KEY', 'DEFAULT_LINE_AUTH_TOKEN')) 
 
 # config here
 w3 = Web3(Web3.HTTPProvider(f'https://mainnet.infura.io/v3/{INFLURA_API_KEY}'))
+#https://mainnet.infura.io/v3/bfa7183bdd4241a6aa36b718bce971af
 your_address = WALLET_ADDRESS  # my address don't use it.
 target_gem = TARGET_GEM  # gem type
 
 # Line notification
-NOTIFY_AUTH_TOKEN = os.getenv('NOTIFY_AUTH_TOKEN', '')
+NOTIFY_AUTH_TOKEN = os.getenv('NOTIFY_AUTH_TOKEN', 'DEFAULT_LINE_AUTH_TOKEN')
 notify_url = 'https://notify-api.line.me/api/notify'
 notify_headers = {'Authorization': 'Bearer ' + NOTIFY_AUTH_TOKEN}
 
@@ -46,6 +50,7 @@ chain_id = 1  # eth
 if NOTIFY_AUTH_TOKEN != '':
     body = {
         'message': 'Starting gem mining...'
+                   + '\nfrom: ' + str(PCName)
                    + '\nkind: ' + str(target_gem)
                    + '\nwallet: ' + your_address
                    + '\nnonce: ' + str(nonce)
@@ -64,6 +69,7 @@ salt = stick.run()
 if NOTIFY_AUTH_TOKEN != '':
     body = {
         'message': 'Gem found'
+                   + '\nfrom: ' + str(PCName)
                    + '\nkind: ' + str(target_gem)
                    + '\nwallet: ' + your_address
                    + '\nnonce: ' + str(nonce)
